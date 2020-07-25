@@ -1,14 +1,16 @@
+import TypeScript from "@rollup/plugin-typescript"
 import commonjs from "@rollup/plugin-commonjs";
 import VuePlugin from "rollup-plugin-vue";
 import resolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 
 export default {
-  input: "src/index.js",
+  input: "src/index.ts",
   plugins: [
     commonjs(),
     VuePlugin(),
     resolve(),
+    TypeScript(),
     babel({ exclude: "node_modules/**" })
   ],
   output: [
